@@ -1,0 +1,480 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+#wrapper {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Flags */
+.flag__birthday {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    z-index: 1;
+}
+
+.flag__birthday i {
+    font-size: 60px;
+    color: #ff6b6b;
+    animation: flagWave 3s ease-in-out infinite;
+}
+
+.flag__left {
+    transform-origin: left top;
+}
+
+.flag__right {
+    transform-origin: right top;
+}
+
+@keyframes flagWave {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
+}
+
+/* Main Content */
+.content {
+    display: flex;
+    height: 100vh;
+    position: relative;
+    z-index: 2;
+}
+
+.left, .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* Title Animation */
+.title {
+    position: relative;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.happy, .birthday {
+    font-family: 'Dancing Script', cursive;
+    font-size: 5rem;
+    color: #ff1493;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    line-height: 1.2;
+}
+
+.happy span, .birthday span {
+    display: inline-block;
+    animation: bounceLetter var(--t) ease infinite;
+}
+
+@keyframes bounceLetter {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.hat {
+    position: absolute;
+    top: -40px;
+    right: -20px;
+}
+
+.hat i {
+    font-size: 60px;
+    color: #ffd700;
+    animation: hatWobble 2s ease-in-out infinite;
+    transform-origin: top center;
+}
+
+@keyframes hatWobble {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    75% { transform: rotate(-10deg); }
+}
+
+/* Date */
+.date__of__birth {
+    font-size: 3rem;
+    font-family: 'Dancing Script', cursive;
+    color: #fff;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.date__of__birth i {
+    font-size: 2rem;
+    color: #ffd700;
+    margin: 0 10px;
+}
+
+/* Button */
+.btn {
+    margin-top: 30px;
+}
+
+#btn__letter {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.mail {
+    background: linear-gradient(45deg, #ff1493, #ff6b6b);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(255, 20, 147, 0.3);
+    transition: all 0.3s ease;
+}
+
+.mail i {
+    margin-left: 10px;
+}
+
+.mail:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 20, 147, 0.4);
+}
+
+/* Right Side - Profile */
+.box__account {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.image i {
+    font-size: 120px;
+    color: #ff1493;
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% { filter: drop-shadow(0 0 10px rgba(255, 20, 147, 0.5)); }
+    50% { filter: drop-shadow(0 0 20px rgba(255, 20, 147, 0.8)); }
+}
+
+.name {
+    font-size: 1.5rem;
+    color: white;
+    margin: 15px 0;
+}
+
+.name i {
+    color: #ff1493;
+    margin: 0 10px;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* Balloons */
+.balloon_one, .balloon_two {
+    position: absolute;
+    font-size: 50px;
+}
+
+.balloon_one {
+    top: -30px;
+    left: -30px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.balloon_two {
+    bottom: -30px;
+    right: -30px;
+    animation: float 3.5s ease-in-out infinite reverse;
+}
+
+.balloon_one i, .balloon_two i {
+    color: #ff6b6b;
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+/* Circle Text */
+.cricle {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text__cricle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rotate 10s linear infinite;
+}
+
+.text__cricle span {
+    position: absolute;
+    left: 50%;
+    font-size: 1.2rem;
+    transform-origin: 0 100px;
+    color: white;
+    font-weight: bold;
+}
+
+.cricle > i {
+    font-size: 50px;
+    color: #ff1493;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Decorative Elements */
+.decorate_star {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ffd700;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+.star1 { top: 20%; left: 10%; animation-delay: 0s; }
+.star2 { top: 30%; right: 15%; animation-delay: 0.3s; }
+.star3 { bottom: 25%; left: 20%; animation-delay: 0.6s; }
+.star4 { bottom: 30%; right: 25%; animation-delay: 0.9s; }
+.star5 { top: 50%; left: 50%; animation-delay: 1.2s; }
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+.decorate_flower--one,
+.decorate_flower--two,
+.decorate_flower--three {
+    position: absolute;
+    font-size: 30px;
+}
+
+.decorate_flower--one i,
+.decorate_flower--two i,
+.decorate_flower--three i {
+    color: #ffa07a;
+    animation: sway 3s ease-in-out infinite;
+}
+
+.decorate_flower--one { bottom: 10%; left: 5%; }
+.decorate_flower--two { bottom: 15%; right: 8%; animation-delay: 0.5s; }
+.decorate_flower--three { top: 20%; right: 10%; animation-delay: 1s; }
+
+@keyframes sway {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+}
+
+.decorate_bottom {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    color: #ff1493;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-20px); }
+}
+
+.smiley__icon {
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    font-size: 60px;
+    color: #ffd700;
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Mail Popup */
+.boxMail {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 90%;
+    max-width: 600px;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    z-index: 1000;
+    transition: all 0.5s ease;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.boxMail.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    visibility: visible;
+}
+
+.fa-xmark {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ff1493;
+    transition: transform 0.3s ease;
+}
+
+.fa-xmark:hover {
+    transform: rotate(90deg);
+}
+
+.boxMail-container {
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.card1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.userImg i {
+    font-size: 80px;
+    color: #ff1493;
+    margin-bottom: 15px;
+}
+
+.username {
+    font-size: 1.5rem;
+    color: #ff1493;
+    margin: 10px 0;
+}
+
+.card1 h3 {
+    font-size: 2rem;
+    color: #ff6b6b;
+    font-family: 'Dancing Script', cursive;
+}
+
+.card2-content {
+    line-height: 1.8;
+}
+
+.card2-content h2 {
+    color: #ff1493;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.card2-content p {
+    color: #666;
+    margin: 15px 0;
+    font-size: 1.1rem;
+}
+
+.hearts-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.hearts-container i {
+    font-size: 30px;
+    color: #ff1493;
+    margin: 0 10px;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.hearts-container i:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.hearts-container i:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+    
+    .happy, .birthday {
+        font-size: 3rem;
+    }
+    
+    .flag__birthday i {
+        font-size: 40px;
+    }
+    
+    .flag__birthday {
+        padding: 0 20px;
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff1493;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff6b6b;
+}
